@@ -5,8 +5,8 @@ services:
     container_name: freechat-db
     image: postgres:10-alpine
     environment:
-      POSTGRES_USER: snowy
-      POSTGRES_PASSWORD: p2qH43iS5wkdjTpyi9SoVkbtk4Z5BwR
+      POSTGRES_USER: ${PG_USER}
+      POSTGRES_PASSWORD: ${PG_PASS}
     ports:
       - 5432:5432
     volumes:
@@ -22,8 +22,8 @@ services:
     container_name: freechat-pgadmin
     image: dpage/pgadmin4:latest
     environment:
-      PGADMIN_DEFAULT_EMAIL: code@juul.xyz
-      PGADMIN_DEFAULT_PASSWORD: I0YMSbiGoRccR2mL7Xut2fkLCtVqJzgM
+      PGADMIN_DEFAULT_EMAIL: PGADMIN_EMAIL
+      PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_PASS}
     ports:
       - 5430:80
     volumes:
